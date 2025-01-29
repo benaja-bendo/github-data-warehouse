@@ -24,10 +24,10 @@ Les fichiers .parquet sont stockés dans scripts/data/raw/.
 
 Une fois les fichiers .parquet générés, nous les chargeons dans DuckDB :
 
-**Sources de données** :
+```python
+python load_duckdb.py
+```
 
-- GET /users
-- GET /repos/{owner}/{repo}/commits
-- GET /repos/{owner}/{repo}/issues
-- GET /repos/{owner}/{repo}/pulls
-- GET /orgs/{org}
+
+🚀 Pour plus de détails sur la modélisation des données, consulte le README de dbt ! 🎉
+[➡️ Documentation dbt ](dbt/airflow_warehouse/README.md)
