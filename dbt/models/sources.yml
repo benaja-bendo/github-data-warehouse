@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: main_raw
+    description: "Données brutes collectées depuis GitHub"
+    tables:
+      - name: contributors
+        description: "Liste des contributeurs"
+      - name: issues
+        description: "Issues du dépôt"
+      - name: pull_requests
+        description: "Pull requests du dépôt"
+      - name: repo_stats
+        description: "Statistiques générales du dépôt"
