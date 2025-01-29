@@ -1,0 +1,54 @@
+version: 2
+
+models:
+  - name: cleansed_contributors
+    description: "Table nettoyée contenant les informations des contributeurs."
+    columns:
+      - name: login
+        description: "Nom d'utilisateur GitHub."
+      - name: contributions
+        description: "Nombre de contributions de l'utilisateur."
+      - name: organization
+        description: "Organisation GitHub."
+
+  - name: cleansed_issues
+    description: "Table nettoyée des issues, avec normalisation des labels et des dates."
+    columns:
+      - name: issue_id
+        description: "Identifiant unique de l'issue."
+      - name: created_at
+        description: "Date de création de l'issue."
+      - name: closed_at
+        description: "Date de fermeture."
+      - name: state
+        description: "État de l'issue (open/closed)."
+      - name: labels
+        description: "Liste des labels sous forme de chaîne de caractères."
+
+  - name: cleansed_pull_requests
+    description: "Table nettoyée contenant les pull requests fusionnées."
+    columns:
+      - name: pr_number
+        description: "Numéro de la pull request."
+      - name: merged_at
+        description: "Date de fusion."
+      - name: comments
+        description: "Nombre de commentaires."
+      - name: additions
+        description: "Nombre de lignes ajoutées."
+      - name: deletions
+        description: "Nombre de lignes supprimées."
+
+  - name: cleansed_repo_stats
+    description: "Statistiques consolidées du dépôt GitHub."
+    columns:
+      - name: collected_at
+        description: "Date de collecte des statistiques."
+      - name: stars
+        description: "Nombre total d'étoiles."
+      - name: forks
+        description: "Nombre total de forks."
+      - name: open_issues
+        description: "Nombre d'issues ouvertes."
+      - name: subscribers
+        description: "Nombre d'abonnés."

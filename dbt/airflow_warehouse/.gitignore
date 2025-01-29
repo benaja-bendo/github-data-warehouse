@@ -1,0 +1,30 @@
+# 📂 Ignorer les fichiers de compilation dbt
+dbt_packages/
+target/
+logs/
+manifest.json
+run_results.json
+graph.gpickle
+partial_parse.msgpack
+
+# 📂 Ignorer les bases de données DuckDB locales
+*.duckdb
+*.db
+*.db-journal
+
+# 📂 Ignorer les fichiers de cache
+dbt_modules/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# 📂 Ignorer les fichiers de configuration temporaires
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 📂 Ignorer les fichiers de documentation générés
+dbt_docs/

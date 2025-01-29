@@ -3,13 +3,56 @@ version: 2
 sources:
   - name: raw
     schema: main_raw
-    description: "Données brutes collectées depuis GitHub"
+    description: "Données brutes collectées depuis l'API GitHub"
     tables:
       - name: contributors
-        description: "Liste des contributeurs"
+        description: "Liste des contributeurs et leurs statistiques de contribution."
+        columns:
+          - name: login
+            description: "Nom d'utilisateur GitHub du contributeur."
+          - name: contributions
+            description: "Nombre total de contributions de l'utilisateur."
+          - name: organization
+            description: "Organisation GitHub à laquelle appartient l'utilisateur."
+
       - name: issues
-        description: "Issues du dépôt"
+        description: "Issues ouvertes et fermées sur le dépôt Apache Airflow."
+        columns:
+          - name: issue_id
+            description: "Identifiant unique de l'issue."
+          - name: created_at
+            description: "Date de création de l'issue."
+          - name: closed_at
+            description: "Date de fermeture de l'issue (NULL si toujours ouverte)."
+          - name: state
+            description: "État de l'issue (open ou closed)."
+          - name: labels
+            description: "Liste des labels associés à l'issue."
+
       - name: pull_requests
-        description: "Pull requests du dépôt"
+        description: "Pull requests créées et fusionnées sur le dépôt Apache Airflow."
+        columns:
+          - name: pr_number
+            description: "Numéro unique de la pull request."
+          - name: merged_at
+            description: "Date de fusion de la pull request."
+          - name: comments
+            description: "Nombre de commentaires sur la pull request."
+          - name: additions
+            description: "Nombre de lignes de code ajoutées."
+          - name: deletions
+            description: "Nombre de lignes de code supprimées."
+
       - name: repo_stats
-        description: "Statistiques générales du dépôt"
+        description: "Statistiques globales du dépôt Apache Airflow."
+        columns:
+          - name: collected_at
+            description: "Date de collecte des statistiques."
+          - name: stars
+            description: "Nombre total d'étoiles du dépôt."
+          - name: forks
+            description: "Nombre total de forks du dépôt."
+          - name: open_issues
+            description: "Nombre d'issues ouvertes."
+          - name: subscribers
+            description: "Nombre d'abonnés au dépôt."
